@@ -382,7 +382,8 @@ header {
 	border-radius: 1rem;
 	position: absolute;
 	display: flex;
-	justify-content: space-between;
+	flex-direction: column;
+	justify-content: center;
 	padding: 0 1rem;
 	width: 97%;
 	height: 95%;
@@ -393,6 +394,17 @@ header {
 	background-repeat: no-repeat;
 	background-position: center;
 	z-index: 1;
+	font-size: 6rem;
+	font-weight: bold;
+	color: var(--color-gold);
+	text-shadow: 2px 2px 2px var(--color-blue);
+	
+}
+
+
+.card:nth-of-type(2) .card-inner{
+	background-image: url(images/keto1.jpg);
+
 }
 
 .card .circle {
@@ -403,62 +415,22 @@ header {
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	background-image: url(images/sakYantGoldTower.png);
-	background-size: cover;
-	background-repeat: no-repeat;
-	background-position: center;
-	font-size: 4rem;
-	font-weight: bold;
-	color: var(--color-white);
-	text-shadow: 2px 2px 2px var(--color-gold);
 }
 
-.card:nth-child(1) .circle {
-	background-image: url(images/sakYantMini2.png);
-	background-size: cover;
-	background-repeat: no-repeat;
-}
-
-.card:nth-child(2) .circle {
-	background-image: url(images/sakYantMini1.png);
-	background-size: cover;
-	background-repeat: no-repeat;
-}
-
-.card:nth-child(3) .circle {
-	background-image: url(images/sakYantMini3.png);
-	background-size: cover;
-	background-repeat: no-repeat;
-}
-
-.card .circle::after,
-.card .circle::before {
-	content: '';
-	position: absolute;
-	padding: 1rem;
-	background-image: var(--linear-gradeint-thailand);
-	width: 105%;
-	height: 105%;
-	z-index: -1;
-	border-radius: 50%;
-}
-
-.card .circle::after {
-	filter: blur(10px);
-	opacity: 0.5;
-}
 
 .card .circle .number {
+	font-size: 8rem;
+	font-weight: bold;
+	color: var(--color-gold);
+	text-shadow: 2px 2px 2px var(--color-blue);
 	padding-right: 1rem;
-	color: var(--color-white);
-	text-shadow: 2px 2px 2px var(--color-gold);
 }
 
 .card .card-inner .about{
 	position:relative;
-	color: var(--color-white);
-	text-shadow: 2px 2px 2px var(--color-gold);
-	font-size: 4rem;
+	color: var(--color-gold);
+	text-shadow: 2px 2px 2px var(--color-blue);
+	font-size: 5rem;
 	padding-right: 2rem;
 	text-align: center;
 }

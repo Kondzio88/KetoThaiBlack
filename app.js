@@ -53,6 +53,9 @@ window.addEventListener('scroll', function () {
 				countingFlag = true
 			}
 		}
+		else if(id == 'card-section' && top < offset / 2){
+			countingFlag = false
+		}
 	})
 })
 
@@ -103,3 +106,19 @@ links.forEach(link => {
 		}
 	})
 })
+
+// ! IMAGE CARD KETO CHANGES
+
+const images = ['images/keto1.jpg','images/keto2.jpg','images/keto3.jpg','images/keto4.jpg','images/keto5.jpg']
+
+
+function changeBackgroundImage() {
+	const randomIndex = Math.floor(Math.random() * images.length); // Losowanie indeksu
+	const randomImage = images[randomIndex]; // Pobieranie obrazu z tablicy
+	const secondCardInner = document.querySelector('.image-keto');
+	
+	secondCardInner.style.backgroundImage = `url(${randomImage})`;
+  }
+  
+  // Uruchamianie funkcji co sekundę
+  setInterval(changeBackgroundImage, 3000);
