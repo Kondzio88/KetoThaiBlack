@@ -1,7 +1,7 @@
 // ! TYPED JS
 
 var options = {
-	strings: ['Ketozie', 'Muay-Thai', 'Zdrowemu Odżywianiu','Keto Life Style'],
+	strings: ['Ketozie', 'Muay-Thai', 'Zdrowemu Odżywianiu', 'Keto Life Style'],
 	typeSpeed: 100,
 	backSpeed: 10,
 	startDelay: 1000,
@@ -23,7 +23,7 @@ function countingNumbers() {
 	valueDispays.forEach(value => {
 		let startValue = 0
 		let endValue = parseInt(value.getAttribute('data-value'))
-		console.log(endValue)
+		
 		let duration = Math.floor(interval / endValue)
 		let counter = setInterval(() => {
 			startValue += 1
@@ -64,7 +64,7 @@ window.addEventListener('scroll', () => {
 	if (window.scrollY > 150) {
 		nav.style.background = 'rgba(0, 0, 0, 1)'
 		nav.style.transition = 'all 1s'
-	} else if(window.scrollY < 150 && !navLinks.classList.contains('active')) {
+	} else if (window.scrollY < 150 && !navLinks.classList.contains('active')) {
 		nav.style.background = 'rgba(0, 0, 0, 0.5)'
 		nav.style.transition = 'all 1s'
 	}
@@ -87,8 +87,19 @@ openMenuIcon.addEventListener('click', () => {
 		openMenuIcon.style.display = 'block'
 		closeMenuIcon.style.display = 'none'
 	})
-	if(navLinks.classList.contains('active')){
+	if (navLinks.classList.contains('active')) {
 		nav.style.background = 'rgba(0, 0, 0, 1)'
-		console.log('ok');
 	}
+})
+
+// ! LINKS A EVENTLISTENER
+
+links.forEach(link => {
+	link.addEventListener('click', () => {
+		if (navLinks.classList.contains('active') ) {
+			navLinks.classList.remove('active')
+			closeMenuIcon.style.display = 'none'
+			openMenuIcon.style.display = 'block'
+		}
+	})
 })
