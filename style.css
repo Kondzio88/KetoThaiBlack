@@ -204,12 +204,13 @@ header {
 
 .hamburger-menu .bx {
 	position: absolute;
+	color:var(--color-gold);
 }
 
 /* !================== MAIN SECTION ------------------------------------ */
 
 .main-section {
-	background-image: url(images/tukTuk.jpg);
+	background-image: url(images/bgThailand.jpg);
 	background-size: cover;
 	background-repeat: no-repeat;
 	background-position: center;
@@ -256,12 +257,13 @@ header {
 	text-align: center;
 	gap: 2rem;
 	min-height: 300px;
-	color: var(--color-white);
-	text-shadow: 3px 3px 2px var(--color-gold);
+	color: var(--color-gold);
+	text-shadow: 3px 3px 2px var(--color-white);
 }
 
 .typed-js {
-	color: var(--color-white);
+	color: var(--color-gold);
+	text-shadow: 3px 3px 2px var(--color-white);
 }
 
 /* !------------ CARD SECTION ----------------- */
@@ -504,6 +506,41 @@ header {
 		color: var(--color-white);
 		font-size: 4rem;
 	}
+
+	.main-text{
+		min-height: 310px;
+	}
+	
+	/* About Container */
+
+	.about-container{
+		flex-direction: column;
+	}
+
+	.about-container .right-side{
+		order:1;
+		width:90%;
+	}
+
+	.about-container .left-side{
+		order: 2;
+		width:90%;
+	}
+
+	.about-container .right-side .circle-image img{
+		width:100%;
+		height: 500px;
+	}
+
+}
+
+/* ? MEDIA QUERIES 600px */
+
+@media screen and (max-width: 600px){
+
+	.about-container .right-side .circle-image img{
+		height:400px;
+	}
 }
 
 /* ? MEDIA QUERIES SMARTPHONE */
@@ -548,5 +585,13 @@ header {
 		align-items: center;
 		color: var(--color-white);
 		font-size: 4rem;
+	}
+
+	.about-container{
+		padding: 1rem 0;
+	}
+
+	.about-container .right-side .circle-image img{
+		height: 350px;
 	}
 }

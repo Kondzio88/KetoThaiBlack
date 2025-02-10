@@ -1,7 +1,7 @@
 // ! TYPED JS
 
 var options = {
-	strings: ['Ketozie', 'Muay-Thai', 'Keto Life Style'],
+	strings: ['Ketozie', 'Muay-Thai', 'Zdrowemu Odżywianiu','Keto Life Style'],
 	typeSpeed: 100,
 	backSpeed: 10,
 	startDelay: 1000,
