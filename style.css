@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Playwrite+IN:wght@100..400&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Permanent+Marker&family=Playwrite+IN:wght@100..400&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
 
 *,
 ::after,
@@ -145,7 +145,7 @@ header {
 	color: var(--color-gold);
 	padding: 1rem;
 	border-radius: 2rem;
-
+	font-family: 'Permanent Marker', serif;
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -185,14 +185,14 @@ header {
 
 .nav-tools i {
 	font-size: 3rem;
-	color: var(--color-white);
+	color: var(--color-gold);
 	border-radius: 50%;
 	transition: 1s;
 	padding: 1rem;
 }
 
 .nav-tools i:hover {
-	color: var(--color-gold);
+	color: var(--color-white);
 }
 
 /* !----------------------- HAMBURGER------------------------------------ */
@@ -204,7 +204,7 @@ header {
 
 .hamburger-menu .bx {
 	position: absolute;
-	color:var(--color-gold);
+	color: var(--color-gold);
 }
 
 /* !================== MAIN SECTION ------------------------------------ */
@@ -251,12 +251,12 @@ header {
 .main-text {
 	font-size: 5rem;
 	font-weight: bold;
-	font-family: 'Popins', sans-serif;
+	font-family: 'Permanent Marker', serif;
 	display: flex;
 	flex-direction: column;
 	text-align: center;
 	gap: 2rem;
-	min-height: 300px;
+	min-height: 352px;
 	color: var(--color-gold);
 	text-shadow: 3px 3px 2px var(--color-white);
 }
@@ -348,6 +348,7 @@ header {
 	border-radius: 2rem;
 	overflow: hidden;
 	box-shadow: rgba(51, 51, 51, 0.2) 0px 2px 8px 0px;
+	font-family: 'Permanent Marker', serif;
 }
 
 .card::after {
@@ -398,13 +399,10 @@ header {
 	font-weight: bold;
 	color: var(--color-gold);
 	text-shadow: 2px 2px 2px var(--color-blue);
-	
 }
 
-
-.card:nth-of-type(2) .card-inner{
+.card:nth-of-type(2) .card-inner {
 	background-image: url(images/keto1.jpg);
-
 }
 
 .card .circle {
@@ -417,17 +415,17 @@ header {
 	align-items: center;
 }
 
-
 .card .circle .number {
 	font-size: 8rem;
 	font-weight: bold;
 	color: var(--color-gold);
 	text-shadow: 2px 2px 2px var(--color-blue);
 	padding-right: 1rem;
+	font-family: 'Playwrite IN', serif;
 }
 
-.card .card-inner .about{
-	position:relative;
+.card .card-inner .about {
+	position: relative;
 	color: var(--color-gold);
 	text-shadow: 2px 2px 2px var(--color-blue);
 	font-size: 5rem;
@@ -435,18 +433,18 @@ header {
 	text-align: center;
 }
 
-.card .card-inner video{
-	position:absolute;
-	top:0;
+.card .card-inner video {
+	position: absolute;
+	top: 0;
 	left: 0;
-	width:100%;
+	width: 100%;
 	height: 100%;
 	object-fit: cover;
 	object-position: center;
 }
 /* ! -------------------------------- MEDIA QUERIES ---------------------------------- */
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 840px) {
 	html {
 		font-size: 55%;
 	}
@@ -499,43 +497,47 @@ header {
 		font-size: 4rem;
 	}
 
-	.main-text{
+	.main-text {
 		min-height: 310px;
 	}
-	
+
 	/* About Container */
 
-	.about-container{
+	.about-container {
 		flex-direction: column;
 	}
 
-	.about-container .right-side{
-		order:1;
-		width:90%;
+	.about-container .right-side {
+		order: 1;
+		width: 90%;
 	}
 
-	.about-container .left-side{
+	.about-container .left-side {
 		order: 2;
-		width:90%;
+		width: 90%;
 	}
 
-	.about-container .right-side .circle-image img{
-		width:100%;
+	.about-container .right-side .circle-image img {
+		width: 100%;
 		height: 500px;
 	}
-
 }
 
 /* ? MEDIA QUERIES 600px */
 
-@media screen and (max-width: 600px){
-
+@media screen and (max-width: 600px) {
 	.about-container .right-side .circle-image {
 		min-height: 430px;
 	}
 
-	.about-container .right-side .circle-image img{
-		height:400px;
+	.about-container .right-side .circle-image img {
+		height: 400px;
+	}
+}
+
+@media screen and (max-width: 520px) {
+	.main-text {
+		min-height: 440px;
 	}
 }
 
@@ -583,7 +585,7 @@ header {
 		font-size: 4rem;
 	}
 
-	.about-container{
+	.about-container {
 		padding: 1rem 0;
 	}
 
@@ -591,7 +593,7 @@ header {
 		min-height: 400px;
 	}
 
-	.about-container .right-side .circle-image img{
+	.about-container .right-side .circle-image img {
 		height: 350px;
 	}
 }
