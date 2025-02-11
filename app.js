@@ -23,7 +23,7 @@ function countingNumbers() {
 	valueDispays.forEach(value => {
 		let startValue = 0
 		let endValue = parseInt(value.getAttribute('data-value'))
-		
+
 		let duration = Math.floor(interval / endValue)
 		let counter = setInterval(() => {
 			startValue += 1
@@ -52,8 +52,7 @@ window.addEventListener('scroll', function () {
 				countingNumbers()
 				countingFlag = true
 			}
-		}
-		else if(id == 'card-section' && top < offset / 2){
+		} else if (id == 'card-section' && top < offset / 2) {
 			countingFlag = false
 		}
 	})
@@ -99,7 +98,7 @@ openMenuIcon.addEventListener('click', () => {
 
 links.forEach(link => {
 	link.addEventListener('click', () => {
-		if (navLinks.classList.contains('active') ) {
+		if (navLinks.classList.contains('active')) {
 			navLinks.classList.remove('active')
 			closeMenuIcon.style.display = 'none'
 			openMenuIcon.style.display = 'block'
@@ -109,28 +108,34 @@ links.forEach(link => {
 
 // ! IMAGE CARD KETO CHANGES
 
-const images = ['images/keto1.jpg','images/keto2.jpg','images/keto3.jpg','images/keto4.jpg','images/keto5.jpg']
+const imagesKeto = ['images/keto1.jpg', 'images/keto2.jpg', 'images/keto3.jpg', 'images/keto4.jpg', 'images/keto5.jpg']
 
+const imagesAdventure = ['images/imagesAdventure/adv1.jpg','images/imagesAdventure/adv2.jpg','images/imagesAdventure/adv3.jpg','images/imagesAdventure/adv4.jpg','images/imagesAdventure/adv5.jpg','images/imagesAdventure/adv6.jpg','images/imagesAdventure/adv7.jpg','images/imagesAdventure/adv8.jpg','images/imagesAdventure/adv9.jpg','images/imagesAdventure/adv10.jpg','images/imagesAdventure/adv11.jpg','images/imagesAdventure/adv12.jpg','images/imagesAdventure/adv13.jpg','images/imagesAdventure/adv14.jpg','images/imagesAdventure/adv15.jpg','images/imagesAdventure/adv16.jpg','images/imagesAdventure/adv17.jpg','images/imagesAdventure/adv18.jpg','images/imagesAdventure/adv19.jpg','images/imagesAdventure/adv20.jpg','images/imagesAdventure/adv21.jpg','images/imagesAdventure/adv22.jpg',]
+
+const secondCardInner = document.querySelector('.image-keto')
+const thirdCardInner = document.querySelector('.image-adventure')
 let lastIndex = -1
 
-function changeBackgroundImage() {
-	let randomIndex 
+
+function changeBackgroundImage(array,obj) {
+	let randomIndex
 	do {
-		randomIndex = Math.floor(Math.random() * images.length);
-	  } while (randomIndex === lastIndex);
-	  
-	const randomImage = images[randomIndex]; // Pobieranie obrazu z tablicy
-	const secondCardInner = document.querySelector('.image-keto');
+		randomIndex = Math.floor(Math.random() * array.length)
+	} while (randomIndex === lastIndex)
+
+	const randomImage = array[randomIndex]
 
 	lastIndex = randomIndex
-	secondCardInner.classList.add('fade-out')
+	obj.classList.add('fade-out')
 
-	
 	setTimeout(() => {
-		secondCardInner.style.backgroundImage = `url(${randomImage})`;
-		secondCardInner.classList.remove('fade-out');
-	  }, 3000)
-  }
-  
-  // Uruchamianie funkcji co sekundę
-  setInterval(changeBackgroundImage, 3000);
+		obj.style.backgroundImage = `url(${randomImage})`
+		obj.classList.remove('fade-out')
+	}, 3000)
+}
+
+// Uruchamianie funkcji co sekundę
+setInterval(() => changeBackgroundImage(imagesKeto,secondCardInner), 3000)
+
+
+setInterval(() => changeBackgroundImage(imagesAdventure,thirdCardInner),3000)

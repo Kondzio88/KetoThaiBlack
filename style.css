@@ -401,17 +401,19 @@ header {
 	text-shadow: 2px 2px 2px var(--color-blue);
 }
 
-.card:nth-of-type(2) .card-inner {
+.card:nth-of-type(2) .card-inner,
+.card:nth-of-type(3) .card-inner {
 	background: url(images/keto1.jpg);
 	background-size: cover;
 	background-position: center;
-	opacity:1;
+	opacity: 1;
 	transition: background 1s ease;
 }
 
-.card:nth-of-type(2) .card-inner.fade-out {
-	opacity: 0; 
-  }
+.card:nth-of-type(2) .card-inner.fade-out,
+.card:nth-of-type(3) .card-inner.fade-out {
+	opacity: 0;
+}
 
 .card .circle {
 	position: relative;
@@ -485,7 +487,7 @@ header {
 		content: '';
 		top: 0;
 		left: 0;
-		width:100px;
+		width: 100px;
 		height: 100%;
 		background-image: url(images/sakYantGoldLine2.png);
 		padding: 0 1rem;
@@ -495,8 +497,8 @@ header {
 		position: absolute;
 		content: '';
 		top: 0;
-		right:0;
-		width:100px;
+		right: 0;
+		width: 100px;
 		height: 100%;
 		background-image: url(images/sakYantGoldLine.png);
 		padding: 0 1rem;
@@ -507,7 +509,6 @@ header {
 		padding: 2rem;
 		background-color: var(--color-black);
 		min-width: 200px;
-		
 	}
 
 	.nav-links a:hover::before {
@@ -628,6 +629,6 @@ header {
 
 	.main-text {
 		min-height: 470px;
-		min-width:270px;
+		min-width: 270px;
 	}
 }
