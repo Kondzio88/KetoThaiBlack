@@ -111,13 +111,25 @@ links.forEach(link => {
 
 const images = ['images/keto1.jpg','images/keto2.jpg','images/keto3.jpg','images/keto4.jpg','images/keto5.jpg']
 
+let lastIndex = -1
 
 function changeBackgroundImage() {
-	const randomIndex = Math.floor(Math.random() * images.length); // Losowanie indeksu
+	let randomIndex 
+	do {
+		randomIndex = Math.floor(Math.random() * images.length);
+	  } while (randomIndex === lastIndex);
+	  
 	const randomImage = images[randomIndex]; // Pobieranie obrazu z tablicy
 	const secondCardInner = document.querySelector('.image-keto');
+
+	lastIndex = randomIndex
+	secondCardInner.classList.add('fade-out')
+
 	
-	secondCardInner.style.backgroundImage = `url(${randomImage})`;
+	setTimeout(() => {
+		secondCardInner.style.backgroundImage = `url(${randomImage})`;
+		secondCardInner.classList.remove('fade-out');
+	  }, 3000)
   }
   
   // Uruchamianie funkcji co sekundę
