@@ -452,6 +452,35 @@ header {
 	object-fit: cover;
 	object-position: center;
 }
+
+/* ! ----------------------- FOOTER ------------------------------------------------- */
+
+footer {
+	margin-top: 2rem;
+	border-top: 1px solid var(--color-gold);
+	width: 110%;
+	display: flex;
+	justify-content: center;
+}
+
+.social-links {
+	display: flex;
+	padding: 2rem 0;
+	gap: 5rem;
+}
+.social-links i {
+	font-size: 4rem;
+	color: var(--color-gold);
+	padding:1rem;
+	border-radius: 50%;
+	transition: all 1s ease;
+}
+
+.social-links i:hover{
+	color: var(--color-black);
+	background-color: var(--color-gold);
+}
+
 /* ! -------------------------------- MEDIA QUERIES ---------------------------------- */
 
 @media screen and (max-width: 840px) {
