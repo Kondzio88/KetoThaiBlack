@@ -656,6 +656,11 @@ footer {
 	.about-container .right-side .circle-image img {
 		height: 400px;
 	}
+
+	.end-text{
+		padding:0 1rem;
+	}
+	
 	.sponsor-logo a:nth-of-type(3) img {
 		width: 100px;
 	}
@@ -722,7 +727,7 @@ footer {
 	}
 
 	.about-container .right-side .circle-image img {
-		height: 350px;
+		height: 330px;
 	}
 
 	.main-text {
