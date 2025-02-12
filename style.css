@@ -28,7 +28,7 @@
 	--transition3: all 1.5s ease;
 
 	--container-width-lg: 74%;
-	--container-width-md: 88%;
+	--container-width-md: 90%;
 }
 
 html {
@@ -453,6 +453,22 @@ header {
 	object-position: center;
 }
 
+/* ! -------------------------- END TEXT ------------------------------------ */
+
+.end-text {
+	display: flex;
+	justify-self: center;
+	align-items: center;
+	padding: 2rem 0;
+}
+
+.end-text p {
+	font-family: 'Permanent Marker', serif;
+	font-size: 2rem;
+	color: var(--color-gold);
+	text-shadow: 1px 1px 1px var(--color-gray);
+}
+
 /* ! ----------------------- FOOTER ------------------------------------------------- */
 
 footer {
@@ -460,7 +476,9 @@ footer {
 	border-top: 1px solid var(--color-gold);
 	width: 110%;
 	display: flex;
+	flex-direction: column;
 	justify-content: center;
+	align-items: center;
 }
 
 .social-links {
@@ -468,17 +486,38 @@ footer {
 	padding: 2rem 0;
 	gap: 5rem;
 }
+
 .social-links i {
 	font-size: 4rem;
 	color: var(--color-gold);
-	padding:1rem;
+	padding: 1rem;
 	border-radius: 50%;
 	transition: all 1s ease;
 }
 
-.social-links i:hover{
+.social-links i:hover {
 	color: var(--color-black);
 	background-color: var(--color-gold);
+}
+
+.sponsor-logo{
+	width:100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	gap:0 1.5rem;
+	margin-bottom: 2rem;
+}
+
+.sponsor-logo a img{
+	object-fit: contain;
+	cursor: pointer;
+}
+.sponsor-logo a:nth-of-type(2) img{
+	height: 70px;
+}
+.sponsor-logo a:nth-of-type(3) img{
+	width:130px;
 }
 
 /* ! -------------------------------- MEDIA QUERIES ---------------------------------- */
@@ -580,6 +619,19 @@ footer {
 		width: 100%;
 		height: 500px;
 	}
+
+	.sponsor-logo a img{
+		width: calc(20vw);
+	}
+
+	.sponsor-logo a:nth-of-type(2) img{
+		width: calc(30vw);
+	}
+
+	.sponsor-logo a:nth-of-type(3) img{
+		width:100px;
+	}
+	
 }
 
 /* ? MEDIA QUERIES 600px */
@@ -592,7 +644,13 @@ footer {
 	.about-container .right-side .circle-image img {
 		height: 400px;
 	}
+	.sponsor-logo a:nth-of-type(3) img{
+		width:100px;
+	}
+
 }
+
+/* ? MEDIA QUERIES 520px */
 
 @media screen and (max-width: 520px) {
 	.main-text {
@@ -659,5 +717,9 @@ footer {
 	.main-text {
 		min-height: 470px;
 		min-width: 270px;
+	}
+
+	.sponsor-logo a img,.sponsor-logo a:nth-of-type(3) img{
+		width: calc(15vw);
 	}
 }
