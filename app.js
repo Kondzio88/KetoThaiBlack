@@ -1,4 +1,7 @@
-// ! TYPED JS
+// ! TYPED JS and BUTTON Display
+
+let btn = document.querySelector('.main-section .left-side .main-text .btn')
+
 
 var typed1 = new Typed('#typed1', {
 	strings: ['Witaj na mojej stronie!'],
@@ -30,6 +33,11 @@ var typed3 = new Typed('#typed3', {
 	showCursor: false,
 	startDelay: 0,
 	autoStart: false,
+	onComplete: function () {
+		setTimeout(function () {
+			btn.classList.add('visible')
+		}, 500)
+	},
 })
 
 // Start only the first, the rest will be triggered in onComplete

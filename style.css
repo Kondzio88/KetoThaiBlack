@@ -107,7 +107,7 @@ header {
 	font-family: 'Bebas Neue', sans-serif;
 }
 
-/* ! --------------- NAV LINKS A STYLE ,BEFORE ,AFTER --------------------- */
+/* ! --------------- NAV LINKS A STYLE  --------------------- */
 
 .nav-links {
 	display: flex;
@@ -165,7 +165,7 @@ header {
 .main-section {
 	min-height: 100vh;
 	width: 100%;
-	padding: 10rem;
+	padding: 5rem;
 	display: flex;
 	align-items: center;
 	background-color: var(--color-bg);
@@ -213,8 +213,36 @@ header {
 	color: var(--color-font);
 	width: 100%;
 	font-size: 5rem;
+	font-weight: bold;
 	text-align: center;
 	padding: 1rem;
+}
+
+.main-section .left-side .main-text .btn {
+	cursor: pointer;
+	border: 3px solid var(--color-font2);
+	padding: 1rem 2rem;
+	background-color: transparent;
+	border-radius: 2rem;
+	font-size: 3rem;
+	font-weight: bold;
+	color: var(--color-font2);
+	transition: all 0.5s ease;
+	margin-top: 2rem;
+	opacity: 0;
+	visibility: hidden;
+	transition: background-color 0.5s ,opacity 3s ease;
+}
+
+.main-section .left-side .main-text .btn.visible {
+	opacity: 1;
+	visibility: visible;
+}
+
+.main-section .left-side .main-text .btn:hover {
+	background-color: var(--color-font2);
+	color: var(--color-bg);
+	box-shadow: 0 0 14px 8px rgba(138, 43, 226, 0.7);
 }
 
 .main-section .right-side {
@@ -224,8 +252,8 @@ header {
 
 .main-section .right-side .gradient-circle {
 	position: relative;
-	width: 400px;
-	height: 400px;
+	width: 600px;
+	height: 600px;
 	border-radius: 50%;
 	display: flex;
 	align-items: center;
@@ -263,8 +291,8 @@ header {
 	top: 50%;
 	left: 50%;
 	transform: translate(-50%, -50%);
-	width: 500px;
-	height: 500px;
+	width: 600px;
+	height: 600px;
 	border-radius: 50%;
 	z-index: 1;
 }
@@ -553,27 +581,6 @@ footer {
 		background-color: var(--color-bg);
 	}
 
-	.nav-links.active::after {
-		position: absolute;
-		content: '';
-		top: 0;
-		left: 0;
-		width: 100px;
-		height: 100%;
-		background-image: url(images/sakYantGoldLine2.png);
-		padding: 0 1rem;
-	}
-
-	.nav-links.active::before {
-		position: absolute;
-		content: '';
-		top: 0;
-		right: 0;
-		width: 100px;
-		height: 100%;
-		background-image: url(images/sakYantGoldLine.png);
-		padding: 0 1rem;
-	}
 
 	.nav-links a {
 		font-size: 3rem;
@@ -601,23 +608,22 @@ footer {
 	/*  Main Section */
 
 	.main-section .right-side .gradient-circle {
-		width: calc(100vw - 20rem);
-		height: calc(100vw - 20rem);
+		width: calc(100vw - 40rem);
+		height: calc(100vw - 40rem);
 	}
 
 	.main-section .right-side .gradient-circle img {
-		width: calc(100vw - 10rem);
-		height: calc(100vw - 10rem);
+		width: calc(100vw - 30rem);
+		height: calc(100vw - 30rem);
 	}
 
-	/* Main Section */
-
 	.main-section .left-side .main-text {
-		height: 200px;
+		height: 250px;
 	}
 
 	.main-section .left-side .main-text .typed-line {
-		font-size: 3rem;
+		font-size: 3.2rem;
+		font-weight: 900;
 	}
 
 	/* About Container */
@@ -654,9 +660,41 @@ footer {
 	}
 }
 
+/* ? MEDIA QUERIES 700px */
+
+@media screen and (max-width: 700px) {
+
+	.main-section{
+		padding: 1rem;
+	}
+	.main-section .left-side .main-text {
+		align-items: center
+
+	}
+	.main-section .right-side .gradient-circle {
+		width: 60rem;
+		height: 60rem;
+	}
+
+	.main-section .right-side .gradient-circle img {
+		left:30%;
+		width: 50rem;
+		height: 50rem;
+	}
+
+	.main-section .left-side .main-text .typed-line {
+		font-size: 2.5rem;
+	}
+
+	.main-section .left-side .main-text .btn {
+		font-size: 2.5rem;
+	}
+}
+
 /* ? MEDIA QUERIES 600px */
 
 @media screen and (max-width: 600px) {
+
 	.container {
 		width: var(--container-width-md);
 	}
@@ -747,13 +785,28 @@ footer {
 		height: 330px;
 	}
 
-	.main-text {
-		min-height: 470px;
-		min-width: 270px;
-	}
-
+	
 	.sponsor-logo a img,
 	.sponsor-logo a:nth-of-type(3) img {
 		width: calc(15vw);
+	}
+
+	/* ? MAIN SECTION */
+	
+	.main-text {
+		min-height: 470px;
+		
+		
+	}
+
+	.main-section .right-side .gradient-circle {
+		width: 70rem;
+		height: 70rem;
+	}
+
+	.main-section .right-side .gradient-circle img {
+		left:20%;
+		width: 50rem;
+		height: 50rem;
 	}
 }
