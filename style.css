@@ -14,12 +14,12 @@
 
 :root {
 	--color-bg: #000000;
-	--color-font: rgb(255, 255, 255);
-	--color-font2: rgb(138, 43, 226);
-	--color-font3: rgb(30, 217, 30);
+	--color-font: #ffffff;
+	--color-font2: #8a2be2;
+	--color-font3: #1ed91e;
 
-	--color-gray: rgb(123, 121, 121);
-	--color-gray-dark: rgb(67, 66, 66);
+	--color-gray: #7b7979;
+	--color-gray-dark: #434242;
 
 	--transition1: all 0.5s ease;
 	--transition2: all 1 ease;
@@ -163,13 +163,25 @@ header {
 /* !================== MAIN SECTION ------------------------------------ */
 
 .main-section {
-	min-height: 100vh;
+	background-image: url(images/homePhoto_upscayl_3x_upscayl-standard-4x.png);
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
+	-webkit-mask-image: linear-gradient(to right, transparent 0, #000 12%, #000 88%, transparent 100%),
+		linear-gradient(to bottom, transparent 0, #000 12%, #000 88%, transparent 100%);
+	mask-image: linear-gradient(to right, transparent 0, #000 12%, #000 88%, transparent 100%),
+		linear-gradient(to bottom, transparent 0, #000 12%, #000 88%, transparent 100%);
+	/* przetnij maski (wspólny obszar zostaje) */
+	mask-composite: intersect;
+	-webkit-mask-composite: source-in; /* Safari/Chromium */
+	-webkit-mask-repeat: no-repeat;
+	mask-repeat: no-repeat;
+	height: 100vh;
 	width: 100%;
 	padding: 5rem;
 	display: flex;
 	align-items: center;
 	background-color: var(--color-bg);
-	backdrop-filter: blur(10px);
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -200,6 +212,9 @@ header {
 .main-section .left-side {
 	width: 50%;
 	height: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
 }
 
 .main-section .left-side .main-text {
@@ -219,19 +234,21 @@ header {
 }
 
 .main-section .left-side .main-text .btn {
-	cursor: pointer;
-	border: 3px solid var(--color-font2);
+	position: relative;
+	display: inline-block;
 	padding: 1rem 2rem;
-	background-color: transparent;
-	border-radius: 2rem;
 	font-size: 3rem;
 	font-weight: bold;
+	border: 3px solid transparent;
+	border-radius: 2rem;
 	color: var(--color-font2);
-	transition: all 0.5s ease;
-	margin-top: 2rem;
+	background: linear-gradient(var(--color-bg), var(--color-bg)) padding-box,
+		/* tło przycisku */ linear-gradient(120deg, var(--color-font2) 30%, var(--color-font3) 100%) border-box; /* gradient na border */
+	transition: background-color 0.5s, color 0.5s, box-shadow 0.5s, opacity 3s;
 	opacity: 0;
 	visibility: hidden;
-	transition: background-color 0.5s ,opacity 3s ease;
+	margin-top: 2rem;
+	cursor: pointer;
 }
 
 .main-section .left-side .main-text .btn.visible {
@@ -240,61 +257,25 @@ header {
 }
 
 .main-section .left-side .main-text .btn:hover {
-	background-color: var(--color-font2);
+	background: linear-gradient(120deg, var(--color-font2), var(--color-font3)) padding-box,
+		linear-gradient(90deg, var(--color-font2) 30%, var(--color-font3) 100%) border-box;
 	color: var(--color-bg);
 	box-shadow: 0 0 14px 8px rgba(138, 43, 226, 0.7);
 }
 
 .main-section .right-side {
+	padding-top: 2rem;
 	width: 50%;
 	height: 100%;
 }
 
-.main-section .right-side .gradient-circle {
-	position: relative;
-	width: 600px;
-	height: 600px;
-	border-radius: 50%;
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	overflow: visible;
-}
-
-.main-section .right-side .gradient-circle::before {
-	content: '';
-	position: absolute;
-	inset: 0;
-	border-radius: 50%;
-	background: radial-gradient(
-		circle at var(--gx, 30%) var(--gy, 70%),
-		rgb(138, 43, 226) 0%,
-		rgb(30, 217, 30) 100%,
-		transparent 100%
-	);
-	filter: blur(8px);
-	z-index: 0;
-	pointer-events: none;
-}
-
-@keyframes gradientColors {
+@keyframes fadeInImage {
 	0% {
-		background-position: 0% 100%;
+		opacity: 0;
 	}
 	100% {
-		background-position: 100% 0%;
+		opacity: 1;
 	}
-}
-
-.main-section .right-side .gradient-circle img {
-	position: absolute;
-	top: 50%;
-	left: 50%;
-	transform: translate(-50%, -50%);
-	width: 600px;
-	height: 600px;
-	border-radius: 50%;
-	z-index: 1;
 }
 
 /* !------------ CARD SECTION ----------------- */
@@ -581,7 +562,6 @@ footer {
 		background-color: var(--color-bg);
 	}
 
-
 	.nav-links a {
 		font-size: 3rem;
 		padding: 2rem;
@@ -663,13 +643,11 @@ footer {
 /* ? MEDIA QUERIES 700px */
 
 @media screen and (max-width: 700px) {
-
-	.main-section{
+	.main-section {
 		padding: 1rem;
 	}
 	.main-section .left-side .main-text {
-		align-items: center
-
+		align-items: center;
 	}
 	.main-section .right-side .gradient-circle {
 		width: 60rem;
@@ -677,7 +655,7 @@ footer {
 	}
 
 	.main-section .right-side .gradient-circle img {
-		left:30%;
+		left: 30%;
 		width: 50rem;
 		height: 50rem;
 	}
@@ -694,7 +672,6 @@ footer {
 /* ? MEDIA QUERIES 600px */
 
 @media screen and (max-width: 600px) {
-
 	.container {
 		width: var(--container-width-md);
 	}
@@ -785,18 +762,15 @@ footer {
 		height: 330px;
 	}
 
-	
 	.sponsor-logo a img,
 	.sponsor-logo a:nth-of-type(3) img {
 		width: calc(15vw);
 	}
 
 	/* ? MAIN SECTION */
-	
+
 	.main-text {
 		min-height: 470px;
-		
-		
 	}
 
 	.main-section .right-side .gradient-circle {
@@ -805,7 +779,7 @@ footer {
 	}
 
 	.main-section .right-side .gradient-circle img {
-		left:20%;
+		left: 20%;
 		width: 50rem;
 		height: 50rem;
 	}
