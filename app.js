@@ -1,48 +1,34 @@
 // ! TYPED JS and BUTTON Display
 
-let btn = document.querySelector('.main-section .left-side .main-text .btn')
+let description = document.querySelector('.main-section .main-text .description')
 
+const arrayWord = [
+	'Powiedz mi, co jesz, a powiem ci, kim jesteś — Jean Anthelme Brillat-Savarin (1825)',
+	'Człowiek jest tym, co je. — Ludwig Feuerbach (1850)',
+	'Dbaj o swoje ciało. To jedyne miejsce, w którym musisz żyć. — Jim Rohn',
+	'Jeśli masz ciało — jesteś sportowcem. — Bill Bowerman',
+	'Motywacja pozwala zacząć. Nawyk pozwala wytrwać. — Jim Ryun',
+	'Jeśli to cię nie wyzywa — nie zmienia cię. — Fred DeVito',
+	'Uncja prewencji warta jest funta leczenia. — Benjamin Franklin',
+	'Chodzenie to najlepsze lekarstwo. — przypisywane Hipokratesowi',
+	'Siła nie pochodzi z możliwości fizycznych, lecz z niezłomnej woli. — Mahatma Gandhi',
+	'Jedzenie może być najbezpieczniejszą i najpotężniejszą formą lekarstwa — albo najwolniejszą trucizną. — Ann Wigmore',
+	'Nie uciekniesz przed złą dietą. — powiedzenie fitness',
+	'Brzuch robi się w kuchni. — powiedzenie fitness',
+	'Kto ma zdrowie, ma nadzieję; kto ma nadzieję, ma wszystko. — przysłowie arabskie',
+	'Najlepszy plan to ten, którego potrafisz się trzymać. — powiedzenie dietetyczne',
+	'Sen jest najlepszą medytacją. — XIV Dalajlama',
+	'Ci, którzy nie znajdują czasu na ćwiczenia, prędzej czy później będą musieli znaleźć czas na chorobę. — Edward Stanley (XV Earl of Derby), 1873',
+]
 
-var typed1 = new Typed('#typed1', {
-	strings: ['Witaj na mojej stronie!'],
-	typeSpeed: 50,
-	showCursor: false,
-	onComplete: function () {
-		setTimeout(function () {
-			typed2.start()
-		}, 500)
-	},
+var typed = new Typed('.main-section .main-text .description', {
+	strings: arrayWord,
+	typeSpeed: 35,
+	backSpeed: 20,
+	backDelay: 1500,
+	loop: true,
+	smartBackspace: false,
 })
-
-var typed2 = new Typed('#typed2', {
-	strings: ['Poznaj moją historię.'],
-	typeSpeed: 50,
-	showCursor: false,
-	startDelay: 0,
-	autoStart: false,
-	onComplete: function () {
-		setTimeout(function () {
-			typed3.start()
-		}, 500)
-	},
-})
-
-var typed3 = new Typed('#typed3', {
-	strings: ['Zainspiruj się zmianą!'],
-	typeSpeed: 50,
-	showCursor: false,
-	startDelay: 0,
-	autoStart: false,
-	onComplete: function () {
-		setTimeout(function () {
-			btn.classList.add('visible')
-		}, 500)
-	},
-})
-
-// Start only the first, the rest will be triggered in onComplete
-typed2.stop()
-typed3.stop()
 
 // ! COUNT NUMBER CARDS
 
@@ -99,7 +85,7 @@ window.addEventListener('scroll', () => {
 		nav.style.background = 'rgba(0, 0, 0, 1)'
 		nav.style.transition = 'all 1s'
 	} else if (window.scrollY < 150 && !navLinks.classList.contains('active')) {
-		nav.style.background = 'rgba(0, 0, 0, 0.5)'
+		nav.style.background = 'transparent'
 		nav.style.transition = 'all 1s'
 	}
 })
@@ -192,32 +178,3 @@ function changeBackgroundImage(array, obj) {
 setInterval(() => changeBackgroundImage(imagesKeto, secondCardInner), 3000)
 
 setInterval(() => changeBackgroundImage(imagesAdventure, thirdCardInner), 3000)
-
-// ! GRADIENT CIRCLE
-
-const gradient = document.querySelector('.gradient-circle::before') // Pseudo-elementu nie wybierzesz wprost!
-const circle = document.querySelector('.gradient-circle')
-let t = 0
-let direction = 1
-function animate() {
-	// t: 0 (lewy dół), 1 (prawy góra)
-	t += 0.001 * direction
-	console.log(t)
-	if (t >= 1) {
-		t = 1
-		direction = -1
-	}
-	if (t <= 0) {
-		t = 0
-		direction = 1
-	}
-
-	// Interpolacja: x od 0% do 100%, y od 100% do 0%
-	const x = 0 + 100 * t
-	const y = 100 - 100 * t
-	circle.style.setProperty('--gx', `${x}%`)
-	circle.style.setProperty('--gy', `${y}%`)
-
-	requestAnimationFrame(animate)
-}
-animate()
